@@ -1,12 +1,13 @@
-import { Request } from "@nestjs/common";
+import { Request } from 'express';
+import { Socket } from 'socket.io';
 
 // service types
 export type CreatePollFields = {
-    topic: string;
-    votesPerVoter: number;
-    name: string;
-  };
-  
+  topic: string;
+  votesPerVoter: number;
+  name: string;
+};
+
 export type JoinPollFields = {
   pollID: string;
   name: string;
@@ -39,4 +40,5 @@ type AuthPayload = {
   name: string;
 };
 
-export type RequestWithAuth = Request & AuthPayload; 
+export type RequestWithAuth = Request & AuthPayload;
+export type SocketWithAuth = Socket & AuthPayload;
